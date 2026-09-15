@@ -392,7 +392,3 @@ CSV → staging → core → mart → Apache Superset
 - [ ] Superset настроен
 - [ ] Аналитика построена
 - [ ] Курсовая оформлена
-
-## Следующая задача
-
-- [ ] Создать и спроектировать `core.lines` в `sql/03_create_core_tables.sql`
