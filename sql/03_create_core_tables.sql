@@ -50,3 +50,21 @@ CREATE TABLE IF NOT EXISTS core.station_lines (
     CONSTRAINT fk_line FOREIGN KEY (line_id) REFERENCES core.lines (line_id) ON DELETE CASCADE
 );
 
+WITH all_stations_lines AS(
+    SELECT DISTINCT metro_station_name, line_name
+    FROM staging.metro_stations
+    UNION
+    SELECT DISTINCT metro_station_name,line_name
+    FROM staging.passenger_flow
+)
+
+INSERT INTO core.station_lines (station_id, line_id)
+SELECT 
+    s.station_id,
+    l.line_id
+FROM all_stations_lines asl
+
+JOIN core.stations s ON asl.metro_station_name = s.station_name
+JOIN core.lines l ON asl.line_name = l.line_name
+
+ON CONFLICT (station_id, line_id) DO NOTHING;
