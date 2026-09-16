@@ -20,6 +20,9 @@ LEFT JOIN staging.metro_lines AS metro_lines ON all_lines.line_name = metro_line
 ON CONFLICT (line_name) DO NOTHING;
 
 
+
+
+
 CREATE TABLE IF NOT EXISTS core.stations (
     station_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     station_name TEXT UNIQUE NOT NULL
@@ -35,3 +38,15 @@ INSERT INTO core.stations(station_name)
 SELECT metro_station_name
 FROM all_stations
 ON CONFLICT (station_name) DO NOTHING;
+
+
+CREATE TABLE IF NOT EXISTS core.station_lines (
+    station_id BIGINT,
+    line_id INT,
+    
+    PRIMARY KEY (station_id, line_id),
+
+    CONSTRAINT fk_station FOREIGN KEY (station_id) REFERENCES core.stations (station_id) ON DELETE CASCADE,
+    CONSTRAINT fk_line FOREIGN KEY (line_id) REFERENCES core.lines (line_id) ON DELETE CASCADE
+);
+
