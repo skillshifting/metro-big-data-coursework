@@ -40,6 +40,10 @@ FROM all_stations
 ON CONFLICT (station_name) DO NOTHING;
 
 
+
+
+
+
 CREATE TABLE IF NOT EXISTS core.station_lines (
     station_id BIGINT,
     line_id INT,
@@ -68,3 +72,23 @@ JOIN core.stations s ON asl.metro_station_name = s.station_name
 JOIN core.lines l ON asl.line_name = l.line_name
 
 ON CONFLICT (station_id, line_id) DO NOTHING;
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS core.passenger_flow(
+    flow_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    station_id BIGINT,
+    line_id INT,
+    year INT,
+    quarter TEXT,
+    incoming_passengers BIGINT,
+    outgoing_passengers BIGINT,
+    source_global_id BIGINT,
+
+    CONSTRAINT fk_station FOREIGN KEY (station_id) REFERENCES core.stations (station_id) ON DELETE CASCADE,
+    CONSTRAINT fk_line FOREIGN KEY (line_id) REFERENCES core.lines (line_id) ON DELETE CASCADE,
+
+    UNIQUE (station_id, line_id, year, quarter)
+)
