@@ -91,4 +91,65 @@ CREATE TABLE IF NOT EXISTS core.passenger_flow(
     CONSTRAINT fk_line FOREIGN KEY (line_id) REFERENCES core.lines (line_id) ON DELETE CASCADE,
 
     UNIQUE (station_id, line_id, year, quarter)
-)
+);
+
+
+
+INSERT INTO core.passenger_flow (station_id, line_id,year,quarter, incoming_passengers, outgoing_passengers, source_global_id)
+SELECT 
+    s.station_id,
+    l.line_id,
+    pf.year,
+    pf.quarter,
+    pf.incoming_passengers,
+    pf.outgoing_passengers,
+    pf.global_id
+FROM staging.passenger_flow pf
+
+JOIN core.stations s ON pf.metro_station_name = s.station_name
+JOIN core.lines l ON pf.line_name = l.line_name
+ON CONFLICT (station_id,line_id,year,quarter) DO NOTHING;
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS core.station_entrances(
+    entrance_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    station_id BIGINT NOT NULL,
+    line_id INT NOT NULL, 
+    entrance_name TEXT,
+    number_of_exit TEXT,
+    area TEXT,
+    district TEXT,
+    longitude DOUBLE PRECISION NOT NULL, 
+    latitude DOUBLE PRECISION NOT NULL,
+    vestibule_type TEXT, 
+    ticket_machines_amount INT,
+    object_status TEXT,
+    source_global_id BIGINT UNIQUE,
+
+    CONSTRAINT fk_station FOREIGN KEY (station_id) REFERENCES core.stations (station_id) ON DELETE CASCADE,
+    CONSTRAINT fk_line FOREIGN KEY (line_id) REFERENCES core.lines (line_id) ON DELETE CASCADE
+);
+
+INSERT INTO core.station_entrances (station_id,line_id,entrance_name,number_of_exit,area,district,longitude,latitude,vestibule_type,ticket_machines_amount,object_status,source_global_id)
+SELECT 
+    s.station_id,
+    l.line_id,
+    ms.name,
+    ms.number_of_exit,
+    ms.area,
+    ms.district,
+    ms.longitude,
+    ms.latitude,
+    ms.vestibule_type,
+    ms.ticket_machines_amount,
+    ms.object_status,
+    ms.global_id
+FROM staging.metro_stations AS ms
+
+JOIN core.stations s ON ms.metro_station_name = s.station_name
+JOIN core.lines l ON ms.line_name = l.line_name
+
+ON CONFLICT (source_global_id) DO NOTHING;

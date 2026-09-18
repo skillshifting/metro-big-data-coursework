@@ -21,8 +21,7 @@
 
 [Входы и выходы вестибюлей станций Московского метрополитена](https://data.mos.ru/opendata/624)
 
-[Справочник станций Московского метрополитена​​​​​​​](https://data.mos.ru/opendata/2278)
-
+[Справочник станций Московского метрополитена](https://data.mos.ru/opendata/2278)
 
 ## Архитектура
 
@@ -32,7 +31,6 @@ CSV → staging → core → mart → Apache Superset
 - `core` — нормализованные сущности и связи
 - `mart` — готовые аналитические витрины
 - `Superset` — графики и дашборды
-
 
 Сейчас:
 
@@ -44,7 +42,7 @@ CSV → staging → core → mart → Apache Superset
 - [X] Staging создан
 - [X] CSV загружены в staging
 - [X] Core спроектирован
-- [ ] Core заполнен
+- [X] Core заполнен
 - [ ] DBT настроен
 - [ ] Mart создан
 - [ ] Superset настроен
