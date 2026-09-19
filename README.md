@@ -32,6 +32,17 @@ CSV → staging → core → mart → Apache Superset
 - `mart` — готовые аналитические витрины
 - `Superset` — графики и дашборды
 
+## Аналитические витрины
+
+DBT формирует следующие таблицы в схеме `mart`:
+
+- `passenger_flow_by_station` — пассажиропоток по станциям
+- `passenger_flow_by_line` — пассажиропоток по линиям
+- `passenger_flow_by_period` — общий пассажиропоток по годам и кварталам
+- `passenger_flow_change_by_period` — изменение пассажиропотока относительно предыдущего квартала
+- `passenger_flow_by_district` — пассажиропоток по районам Москвы
+- `passenger_flow_station_ranking` — рейтинг станций по пассажиропотоку
+
 Сейчас:
 
 - [X] Исходные данные изучены
@@ -43,8 +54,8 @@ CSV → staging → core → mart → Apache Superset
 - [X] CSV загружены в staging
 - [X] Core спроектирован
 - [X] Core заполнен
-- [ ] DBT настроен
-- [ ] Mart создан
+- [X] DBT настроен
+- [X] Mart создан
 - [ ] Superset настроен
 - [ ] Аналитика построена
 - [ ] Курсовая оформлена
