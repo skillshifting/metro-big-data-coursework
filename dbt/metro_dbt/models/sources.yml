@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: core
+    schema: core
+
+    tables:
+      - name: lines
+      - name: stations
+      - name: station_lines
+      - name: passenger_flow
+      - name: station_entrances

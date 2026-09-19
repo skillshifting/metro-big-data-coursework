@@ -1,0 +1,124 @@
+version: 2
+
+models:
+  - name: passenger_flow_by_station
+    columns:
+      - name: station_name
+        data_tests:
+          - not_null
+
+      - name: line_name
+        data_tests:
+          - not_null
+
+      - name: year
+        data_tests:
+          - not_null
+
+      - name: quarter
+        data_tests:
+          - not_null
+
+
+
+
+  - name: passenger_flow_by_line
+    columns:
+      - name: line_name
+        data_tests:
+          - not_null
+
+      - name: year
+        data_tests:
+          - not_null
+
+      - name: quarter
+        data_tests:
+          - not_null
+
+
+
+
+  - name: passenger_flow_by_period
+    columns:
+      - name: year
+        data_tests:
+          - not_null
+
+      - name: quarter
+        data_tests:
+          - not_null
+
+
+
+
+  - name: passenger_flow_change_by_period
+    columns:
+      - name: year
+        data_tests:
+          - not_null
+      
+      - name: quarter
+        data_tests:
+          - not_null
+
+      - name: total_passengers
+        data_tests:
+          - not_null
+
+
+
+
+
+  - name: passenger_flow_by_district
+    columns:
+      - name: district
+        data_tests:
+          - not_null
+
+      - name: year
+        data_tests:
+          - not_null
+
+      - name: quarter
+        data_tests:
+          - not_null
+      
+      - name: incoming_passengers
+        data_tests:
+          - not_null
+
+      - name: outgoing_passengers
+        data_tests:
+          - not_null
+      - name: total_passengers
+        data_tests:
+          - not_null
+
+      - name: quarter_num
+        data_tests:
+          - not_null
+
+    
+
+  - name: passenger_flow_station_ranking
+    columns:
+      - name: station_name
+        data_tests:
+          - not_null
+
+      - name: year
+        data_tests:
+          - not_null
+
+      - name: quarter
+        data_tests:
+          - not_null
+
+      - name: total_passengers
+        data_tests:
+          - not_null
+
+      - name: station_rank
+        data_tests:
+          - not_null
