@@ -1,0 +1,51 @@
+[0m11:46:04.604919 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1098aab20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ade6fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ade62e0>]}
+
+
+============================== 11:46:04.609789 | 7c48e90d-0c9e-4eb4-b13e-0860c8f107b5 ==============================
+[0m11:46:04.609789 [info ] [MainThread]: Running with dbt=1.10.23
+[0m11:46:04.610371 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'static_parser': 'True', 'quiet': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'fail_fast': 'False', 'introspect': 'True', 'profiles_dir': '/Users/dronovskill/.dbt', 'invocation_command': 'dbt init metro_dbt', 'cache_selected_only': 'False', 'log_path': 'logs', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'no_print': 'None', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'warn_error': 'None', 'printer_width': '80', 'use_experimental_parser': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'log_format': 'default'}
+[0m11:46:04.622673 [warn ] [MainThread]: [[33mWARNING[0m]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. Please upgrade to a newer supported version of dbt for new projects: https://docs.getdbt.com/docs/dbt-versions?utm_source=dbt-cli
+[0m11:46:04.623239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': '7c48e90d-0c9e-4eb4-b13e-0860c8f107b5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ade6610>]}
+[0m11:46:04.623712 [info ] [MainThread]: Creating dbt configuration folder at /Users/dronovskill/.dbt
+[0m11:46:04.625173 [debug] [MainThread]: Starter project path: /Users/dronovskill/Documents/RUT/Технологии_Хранения_Больших_Данных/kursach/.venv/lib/python3.9/site-packages/dbt/include/starter_project
+[0m11:46:04.632571 [info ] [MainThread]: 
+Your new dbt project "metro_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:46:04.633051 [info ] [MainThread]: Setting up your profile.
+[0m11:58:55.754086 [info ] [MainThread]: Profile metro_dbt written to /Users/dronovskill/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m11:58:55.764630 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 770.7106, "process_in_blocks": "0", "process_kernel_time": 0.239401, "process_mem_max_rss": "124026880", "process_out_blocks": "0", "process_user_time": 2.431357}
+[0m11:58:55.766209 [debug] [MainThread]: Command `dbt init` succeeded at 11:58:55.765960 after 770.71 seconds
+[0m11:58:55.767327 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1098aab20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10adc0460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ad7bb20>]}
+[0m11:58:55.768172 [debug] [MainThread]: Flushing usage events
+[0m11:58:57.797860 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:40:08.598789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109962df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae97550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae97e80>]}
+
+
+============================== 14:40:08.603844 | 09a8a6c5-b453-4c6e-baa6-4aa719a6991e ==============================
+[0m14:40:08.603844 [info ] [MainThread]: Running with dbt=1.10.23
+[0m14:40:08.604399 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'fail_fast': 'False', 'write_json': 'True', 'log_cache_events': 'False', 'log_path': 'logs', 'debug': 'False', 'quiet': 'False', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'warn_error': 'None', 'printer_width': '80', 'target_path': 'None', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run --select passenger_flow_by_district', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'version_check': 'True', 'profiles_dir': '/Users/dronovskill/.dbt', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False'}
+[0m14:40:08.604777 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m14:40:08.605086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': '09a8a6c5-b453-4c6e-baa6-4aa719a6991e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109962df0>]}
+[0m14:40:08.605683 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/dronovskill/Documents/RUT/Технологии_Хранения_Больших_Данных/kursach/dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m14:40:08.608358 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.07588896, "process_in_blocks": "0", "process_kernel_time": 0.173615, "process_mem_max_rss": "120864768", "process_out_blocks": "0", "process_user_time": 2.330355}
+[0m14:40:08.608794 [debug] [MainThread]: Command `dbt run` failed at 14:40:08.608701 after 0.08 seconds
+[0m14:40:08.609125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109962df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae7acd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae7ac40>]}
+[0m14:40:08.609438 [debug] [MainThread]: Flushing usage events
+[0m14:40:09.259233 [debug] [MainThread]: An error was encountered while trying to flush usage events

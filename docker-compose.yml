@@ -12,5 +12,18 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./sql:/docker-entrypoint-initdb.d
 
+  superset:
+    image: apache/superset:latest
+    container_name: metro_superset
+    environment:
+      SUPERSET_SECRET_KEY: metro_superset_secret_key
+    ports:
+      - "8088:8088"
+    depends_on:
+      - postgres
+    volumes:
+      - superset_home:/app/superset_home
+
 volumes:
   postgres_data:
+  superset_home:

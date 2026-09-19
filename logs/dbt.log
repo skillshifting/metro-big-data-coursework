@@ -1,0 +1,18 @@
+[0m14:39:32.027405 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e64f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a374820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a39b640>]}
+
+
+============================== 14:39:32.031979 | 63717036-f80f-498b-8015-17932a88c20c ==============================
+[0m14:39:32.031979 [info ] [MainThread]: Running with dbt=1.10.23
+[0m14:39:32.032536 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'log_path': 'logs', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run --select passenger_flow_by_district', 'profiles_dir': '/Users/dronovskill/.dbt', 'no_print': 'None', 'printer_width': '80', 'use_experimental_parser': 'False', 'write_json': 'True', 'empty': 'False', 'quiet': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'introspect': 'True', 'debug': 'False', 'partial_parse': 'True', 'use_colors': 'True', 'version_check': 'True', 'target_path': 'None', 'log_cache_events': 'False'}
+[0m14:39:32.032916 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m14:39:32.033226 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': '63717036-f80f-498b-8015-17932a88c20c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e64f70>]}
+[0m14:39:32.033831 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/dronovskill/Documents/RUT/Технологии_Хранения_Больших_Данных/kursach/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m14:39:32.036597 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.08099317, "process_in_blocks": "0", "process_kernel_time": 0.215452, "process_mem_max_rss": "120913920", "process_out_blocks": "0", "process_user_time": 2.343211}
+[0m14:39:32.037056 [debug] [MainThread]: Command `dbt run` failed at 14:39:32.036961 after 0.08 seconds
+[0m14:39:32.037381 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e64f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a37dd60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a37d490>]}
+[0m14:39:32.037694 [debug] [MainThread]: Flushing usage events
+[0m14:39:33.464505 [debug] [MainThread]: An error was encountered while trying to flush usage events
